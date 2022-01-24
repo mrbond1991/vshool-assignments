@@ -1,0 +1,37 @@
+.main-headline {
+    color: darkgreen;
+    font-size: 50px;
+}
+.sub-headline {
+    font-size: 37px;
+}
+.main-headline, .sub-headline {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+p {
+    line-height: 25px;
+}
+img {
+    float: left;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.first-paragraph {
+    font-size: ;
+}
+.second-paragraph {
+    clear: left;
+}
+.link-label {
+    text-transform: uppercase;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+div, footer {
+    font-size: 22px;
+}

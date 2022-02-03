@@ -1,0 +1,97 @@
+body {
+    
+}
+.np-header-block, .container {
+    display: block;
+    text-align: center;
+    margin: -50px 0 -50px 0;
+    
+}
+.np-header {
+    font-size: 100px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+    padding: none;
+    margin: none;
+}
+.headline-article-block {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 25px;
+}
+.group-logo {
+    width: 500px;
+    margin: -50px 0 -70px 0;
+}
+.article-headline {
+    font-size: 50px;
+}
+.article-subheadline {
+    font-size: 25px;
+    font-style: italic;
+}
+.article-story {
+    font-size: 20px;
+}
+.group-name {
+    font-weight: bold;
+}
+.uncivilized-website {
+    text-decoration: none;
+}
+.uncivilized-website:hover {
+    text-decoration: underline;
+    color: rgb(255, 136, 0)
+}
+.mission {
+    font-size: 25px;
+}
+.mission-word {
+    font-weight: bold;
+}
+.mission-statement {
+    text-transform: capitalize;
+    color:rgb(255, 136, 0);
+}
+.classifieds-header-block {
+    display: block;
+    text-align: center;
+    margin: 0px 0 -50px 0;
+}
+.classifieds-header {
+    font-size: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-top: black 5px solid;
+    border-bottom: black 5px solid;
+    color: black;
+    padding: none;
+    margin: none;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    width: 75%;
+    border-spacing: 5px;
+    margin-left: 12.5%;
+}
+.class-heading {
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    
+}
+.box-content {
+    text-align: justify;
+    width: 100px;
+    height: fit-content;
+}
+.box-heading {
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    
+}

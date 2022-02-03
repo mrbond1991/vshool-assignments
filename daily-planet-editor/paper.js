@@ -29,10 +29,10 @@ for (var i = 0; i < enemies.length; i++) {
     console.log(whoWins(isKryptonite, enemies[i]));
 }
 
-function isLouisLaneAttracted ()
-{
+function isLouisLaneAttracted () {
     // 1 is not at all attracted, 10 is "super" attracted...
-    return math.floor((math.random() * 10) + 1);
+
+    return Math.floor((Math.random() * 10) + 1);
 }
 
 console.log(isLouisLaneAttracted()) ;
@@ -41,8 +41,8 @@ var clarkKent = true;
 var superman = false;
 
 while (clarkKent) {
-    console.log("I'm just a nerdy columnist");
-    var boothQuickChange = math.random();
+    console.log("I'm just a nerdy columnist.");
+    var boothQuickChange = Math.random();
     if (boothQuickChange >= 0.5) {
         clarkKent = false;
         superman = true;

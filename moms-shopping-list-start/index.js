@@ -23,7 +23,7 @@ function createListItem() {
         saveButton.textContent = "Save"
         
         const liInput = document.createElement("input")
-        liInput.innerHTML = listItemName.value
+        liInput.value = listItemName.textContent
         listItem.prepend(liInput)
         document.getElementById("listItem").removeChild(listItemName)
 

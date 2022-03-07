@@ -89,7 +89,7 @@ function checkStats() {
         walk()
     }
 }
-
+//While hp is more than 0 it will continue
 while(hp > 0) {
     walk()
     if(hp >= 250) {

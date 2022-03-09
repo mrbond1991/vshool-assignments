@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Secret Agent Airlines</title>
+    </head>
+    <body>
+        <h1>Secret Agent Airlines</h1>
+        <h2>Welcome to the most secure airline with the best prices!</h2>
+        <p>We promise your information will be so secure, not even the government can find you!</p>
+        <form name="infoForm">
+            First Name: <input type="text" name="fName">
+            <br>
+            <br>
+            Last Name:  <input type="text" name="lName">
+            <br>
+            <br>
+            Age:        <input type="number" name="age">
+            <br>
+            <br>
+            Male:       <input type="radio" name="gender" value="Male">
+            Female:     <input type="radio" name="gender" value="Female">
+            LGBTQ+:     <input type="radio" name="gender" value="LGBTQ+">
+            <br>
+            <br>
+            <p>Where would you like to fly today?</p>
+            <select name="location">
+                <option value="Paris">Paris</option>
+                <option value="London">London</option>
+                <option value="New York">New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+            </select>
+            <br>
+            <br>
+            <p>Do you have any dietary restrictions we should be aware of?</p>
+            Vegetarian: <input type="checkbox" name="diet" value=" Vegetarian">
+            Vegan:      <input type="checkbox" name="diet" value=" Vegan">
+            Keto:       <input type="checkbox" name="diet" value=" Keto">
+            Paleo:       <input type="checkbox" name="diet" value=" Paleo">
+            <br>
+            <br>
+            <button id="submit">Submit</button>
+        </form>
+
+        <script src="index.js"></script>
+    </body>
+</html>

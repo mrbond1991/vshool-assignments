@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 10px;
+    
+}
+
+form {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    display: inline-block;
+    border: black 5px solid;
+    width: 25%;
+    padding: 15px;
+}
+
+button {
+    /* text-align: center; */
+}

@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: aliceblue;
+    width: 50%;
+    margin: auto;
+    border: black 5px solid;
+    border-radius: 15px;
+}
+
+#title {
+    background-color: aqua;
+    border-radius: 10px 10px 0 0;
+}
+
+div {
+   padding: 10px 0 10px 0;
+   background-color: skyblue;
+}
+
+form {
+    background-color: aquamarine;
+    border-radius: 0 0 10px 10px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+input {
+    margin: 5px 0;
+}
+
+.funcSign {
+    margin: 0 5px;
+}
+
+button {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: red;
+    border-radius: 5px;
+}

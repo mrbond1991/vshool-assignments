@@ -21,18 +21,18 @@ body {
 
 li {
     float: left;
-  }
-  
-  li a {
+}
+
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-  li a:hover {
+}
+li a:hover {
     background-color: #111;
-  }
+}
 
 .link-1 {
     /*position: fixed;
@@ -123,9 +123,6 @@ li {
 .article-1 {
     border-bottom: 5px solid black;
 }
-.article-1-head {
-
-}
 .article-1-subhead {
     margin-top: -20px;
 }
@@ -142,9 +139,6 @@ li {
 }
 .article-2 {
     border-bottom: 5px solid black;
-}
-.article-2-head {
-
 }
 .article-2-subhead {
     margin-top: -20px;
@@ -163,9 +157,6 @@ li {
 .article-3 {
     border-bottom: 5px solid black;
 }
-.article-3-head {
-
-}
 .article-3-subhead {
     margin-top: -20px;
 }
@@ -182,9 +173,6 @@ li {
 }
 .article-4 {
     border-bottom: 5px solid black;
-}
-.article-4-head {
-
 }
 .article-4-subhead {
     margin-top: -20px;

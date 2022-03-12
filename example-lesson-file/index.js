@@ -1,0 +1,10 @@
+localStorage.setItem("name", "steve")
+localStorage.setItem("age", 10)
+localStorage.setItem("isAlive", true)
+localStorage.setItem("friends", JSON.stringify(["mark", "tina", "jay"]))
+localStorage.setItem("address", JSON.stringify({street: "123 street", city: "SLC"}))
+
+var name = localStorage.getItem("name")
+const friends = JSON.parse(localStorage.getItem("friends"))
+// const friends = JSON.parse(localStorage.getItem("friends"))
+console.log(friends)

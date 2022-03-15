@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    background-color: white;
+    width: 50%;
+    display: grid;
+    grid-template: 
+    "a b c"
+    "d e f";
+    grid-gap: 10px;
+}
+
+.grid-item {
+    background-color: brown;
+    width: auto;
+    height: 400px;
+    border: solid 5px black;
+}
+
+.box1:hover {
+    background-color: aqua;
+    border-radius: 50%;
+    transition: 1s linear;
+}
+
+.box2:hover {
+    background-color: blueviolet;
+    height: 600px;
+    box-shadow: 10px 10px 8px red;
+    transition: 1s linear;
+}
+
+.box3:hover {
+    background-color: pink;
+    /* width: 500px; */
+    margin: 50px 0 50px 50px;
+    transition: 1s ease-out;
+}
+
+.box4:hover {
+    opacity: 0.5;
+    border-radius: 0 50% 0 50%;
+    transition: 1s linear;
+}
+
+.box5:hover {
+    border: dashed 20px greenyellow;
+    margin: 50px 50px 0 50px;
+    border-radius: 50% 0 50% 0;
+    transition: 500ms linear;
+}
+
+.box6:hover {
+    background-color: deeppink;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    transition: 500ms linear;
+}

@@ -36,30 +36,44 @@ const peopleArray = [
     }
 ]
 
-const newList = []
-
-//1)
-const olderThan18 = peopleArray.filter(person => {
-    if(person.age > 18) {
-        newList.push(person)
+function sortedOfAge(arr) {
+    if(arr.age > 18){
+        return true
     }
-})
+    arr.sort((a, b) => {
+        if(a.lastName < b.lastName){return -1}
+        if(a.lastName > b.lastName){return 1}
+    })
+    
+}
+console.log(sortedOfAge(peopleArray))
 
-//2)
-const alphLName = newList.sort((a, b) => {
-    if(a.lastName < b.lastName) {
-        return -1
-    }
-    if(a.lastName > b.lastName) {
-        return 1
-    }
-})
 
-//3)
-const finalArr = []
 
-const liLookAlike = alphLName.forEach(person => {
-    finalArr.push("<li>" + person.firstName + " " + person.lastName + " is " + person.age + "</li>")
-})
+// const newList = []
 
-console.log(finalArr)
+// //1)
+// const olderThan18 = peopleArray.filter(person => {
+//     if(person.age > 18) {
+//         newList.push(person)
+//     }
+// })
+
+// //2)
+// const alphLName = newList.sort((a, b) => {
+//     if(a.lastName < b.lastName) {
+//         return -1
+//     }
+//     if(a.lastName > b.lastName) {
+//         return 1
+//     }
+// })
+
+// //3)
+// const finalArr = []
+
+// const liLookAlike = alphLName.forEach(person => {
+//     finalArr.push("<li>" + person.firstName + " " + person.lastName + " is " + person.age + "</li>")
+// })
+
+// console.log(finalArr)

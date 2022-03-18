@@ -1,24 +1,144 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: antiquewhite;
-    font-size: 100%;
+    font-size: 70%;
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+p {
+    line-height: 25pt;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'Julius Sans One', sans-serif;
+    margin-bottom: 18px;
 }
 
 .container {
     display: grid;
-    grid-template: 
-    "a b"
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, auto);
+    /* "a b"
     "c d"
     "e f"
     "g h"
     "i i"
-    "j j";
+    "j j"; */
+    border: black solid 2px;
+    justify-content: center;
+    align-content: center;
+    /* justify-items: center;
+    align-items: center; */
     /* width: 100%; */
     /* height: 100%; */
 }
 
+.col1 {
+    /* width: 100%; */
+}
+
 .logo {
-    /* border: black 10px solid; */
-    height: 310px;
-    width: 75rem;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: grid;
+    justify-items: center;
+    border: black solid 2px;
+    color: white;
+    font-size: 25px;
+    /* width: 75rem; */
     background-color: #2d6360;
+}
+
+.design-box {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border: black solid 2px;
+    /* text-align: center; */
+    /* width: 35rem; */
+    background-color: #2d6360;
+}
+
+.designs-bttn {
+    font-size: 20px;
+    color: white;
+    padding: 25px 80px;
+    background: rgb(245 245 245 / 30%);
+}
+
+.about {
+    grid-column: 1/3;
+    border: black solid 2px;
+    padding: 50px 50px 50px 150px;
+}
+
+.designs {
+    grid-column: 3/4;
+    display: grid;
+    padding: 50px;
+    border: black solid 2px;
+}
+
+.designsList {
+    list-style-type: none;
+}
+
+.partic-benefits {
+    grid-column: 1/3;
+    border: black solid 2px;
+    padding: 50px 50px 50px 100px;
+}
+
+.buttons {
+    grid-column: 3/4;
+    border: black solid 2px;
+}
+
+.requirments {
+    grid-column: 1/3;
+    border: black solid 2px;
+    padding: 50px 50px 50px 100px;
+}
+
+.blank {
+    grid-column: 3/4;
+    border: black solid 2px;
+}
+
+.donated-by {
+    grid-column: 1/-1;
+    border: black solid 2px;
+    display: grid;
+    justify-items: center;
+    /* width: 100rem; */
+}
+
+.social-links {
+    grid-column: 1/-1;
+    border: black solid 2px;
 }

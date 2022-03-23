@@ -1,0 +1,64 @@
+{
+    "appetizers": [
+        {
+            "name": "Deep Fried Mushrooms",
+            "ingredients": ["white mushrooms", "flour", "eggs", "italian seasoned breadcrumbs"],
+            "description": "Whole white mushrooms breaded and deepfried to a golden brown, crunchy goodness!"
+        },
+        {
+            "name": "Mozz Sticks with Marinara Sauce",
+            "Mozz Sticks ingredients": ["italian breadcrumbs", "freshly grated parmesan", "salt", "mozzarella", "eggs", "vegetable oil"],
+            "Marinara Sauce ingredients": ["extra-virgin olive oil", "onions", "garlic", "celery", "carrots", "sea salt", "freshly ground pepper", "crushed tomatoes", "bay leaves"],
+            "description": "Deep fried mozzerella surrounded by golden brown, cruchy crust with fresh, handmade marinara sauce!"
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "Mother's Ham and Cheese Sandwhich",
+            "ingredients": ["hand made sour-dough bread", "red-wood smoked ham", "pepper-jack cheese", "avocado-oil mayo", "brown spicy mustard", "fresh lettuce", "fresh tomatoes", "fresh onions"],
+            "description": "The ham and cheese sandwhich that will take you right back to mom's kitchen table. Hand made sour-dough bread with red-wood smoked ham and pepper-jack chees piled high with all the fixings!"
+        },
+        {
+            "name": "Peanut Butter Jelly Time PB&J",
+            "ingredients": ["organic hand-made peanut butter", "organic strawberry, rasberry, or grape jelly", "hand-made white bread"],
+            "description": "The perfect PB&J. Best enjoyed with one of our big glasses of milk!"
+        }
+    ],
+    "hot sandwhiches": [
+        {
+            "name": "Grilled Turkey & Cheese Sliders",
+            "ingredients": ["fresh-baked wheat bread", "pepper-jack cheese", "smoked peppered turkey breast"],
+            "description": "Four grilled turkey & cheese sliders that promise a new spin on an old favorite"
+        },
+        {
+            "name": "The Father of All Ruebens",
+            "ingredients": ["fresh-baked rye bread", "aged swiss cheese", "corned beef", "sauerkraut", "thousand island dressing"],
+            "description": "Over a 1/4 pound of sliced corned beef piled high with sauerkraut, aged swiss cheese and home made thousand island dressing. All of this goodness slammed between two perfectly toasted peices of fresh baked rye bread!"
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Authentic New York Cheesecake",
+            "Crust ingredients": ["graham crackers", "sugar", "butter"],
+            "Filling ingredients": ["full-fat cream cheese", "sugar", "corn starch", "eggs", "heavy cream", "pure vanilla extract", "grated lemon zest"],
+            "description": "New York Cheesecake that is flown in from New York every week. Known for it's creamy, satiny texture. One piece is all you'll need but you will keep coming back for more!"
+        },
+        {
+            "name": "Crème brûlée",
+            "Crust ingredients": ["cream", "eggs", "vanilla", "sugar", "egg yolk"],
+            "description": "A baked to perfection Crème brûlée that will make the perfect crack when you break through the top layer of camelized sugar to get to the oowy goowy center!"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Italian Cream Soda",
+            "Crust ingredients": ["Cherry, rasberry, strawberry, chocolate syrup", "cream", "carbonated water", "whipped cream", "maraschino cherry"],
+            "description": "Old fashioned Italian Cream Soda served with a mountain of whipped cream and cherry on top!"
+        },
+        {
+            "name": "Bottled Topo Chico Sparkling Mineral Water",
+            "Crust ingredients": ["carbonated mineral water"],
+            "description": "The favorite water from our friends from the South, Texas!"
+        }
+    ]
+}

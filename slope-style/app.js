@@ -22,9 +22,30 @@
 // const parseSentence = (location, duration) => `We're going to have a good time in ${location} for ${duration}`  
 //   console.log(parseSentence("Burly Idaho", "2 weeks"));
 
+//   const obj = {
+//     location: "Burly, Idaho", 
+//     duration: "2 weeks"
+//  }
+
+// without destructuring object in parameter list 
+//function parseSentence(parameter) {
+//    return `We're going to have a good time in ${parameter.location} for ${parameter.duration}`
+//}
+
+// const {location, duration} = obj 
+// console.log(`I'm going to ${location}`)
+
+
+// function parseSentence({location, duration}) {
+//     return `We're going to have a good time in ${location} for ${duration}`
+// }
+
+
+// console.log(parseSentence(obj))
+
 // Use array destructuring to make this code ES6:
 // function returnFirst(items){
-//     const [firstItem] = items;
+//     const [firstItem, secondItem] = items;
 //     return firstItem
 // }
 // var items = ["socks", "pjs", "pillow"]
@@ -34,9 +55,7 @@
 // Also, change the string to be using Template literals:
 // const favoriteActivities = ["magnets", "snowboarding", "philanthropy", "janitor work", "eating"];
 // function returnFavorites(arr){
-//     const [firstFav] = arr;
-//     const secondFav = arr[1];
-//     const thirdFav = arr[2];
+//     const [firstFav, secondFav, thirdFav] = arr;
 //     return `My top three favorite activities are, ${firstFav}, ${secondFav}, and ${thirdFav}`
 // }
 // console.log(returnFavorites(favoriteActivities))
@@ -56,8 +75,12 @@
 //     return numbers.reduce((acc, number) => acc * number, 1)
 //   }
 
+// function product(...numbers) {
+//     return numbers.reduce((acc, number) => acc * number, 1)
+//  }
+
 // Make the following function more ES6y. Use at least both the rest and spread operators:
-// function unshift(...array) {
+// function unshift(a,b,c,d,e, ...array) {
 //     return [a, b, c, d, e,...array];
 //   }
 
@@ -65,10 +88,9 @@
 // Use the ES6 shorthand that helps make the syntax look less redundant to simplify it:
 function populatePeople(names){
     return names.map((name) => {
-        name.split(" ");
-        const [firstName] = name;
-        const [lastName] = name;
-        return [{firstName},{lastName}]
+        const nameSplit = name.split(" ");
+        const [firstName, lastName] = nameSplit;
+        return {firstName,lastName}
         }
     )
 }

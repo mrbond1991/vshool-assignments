@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="style.css">
+    <title>Bond Todo List</title>
 </head>
 <body>
     <div id="headerDiv">
         <h1>Bond ToDo List</h1>
-        <input type="text" id="liInput" placeholder="Todo Item">
-        <button id="inputBttn">Add</button>
+        <form id="addTodo" name="list">
+            <input type="text" name="name" id="name" placeholder="Todo Name">
+            <input type="text" name="description" id="description" placeholder="Description">
+            <input type="text" name="price" id="price" placeholder="Price">
+            <input type="text" name="imgUrl" id="imgUrl" placeholder="Image Url">
+            <button id="inputBttn">Add</button>
+        </form>
     </div>
-    <div id="listDiv">
-        <ul id="todoList">
-            <li id="listHead">
-                <h4>Todo Name:</h4>
-                <h4>Edit</h4>
-                <h4>Remove</h4>
-            </li>
-        </ul>
+    <div id="headDiv">
+        <h4>Todo Name:</h4>
+        <h4>Description:</h4>
+        <h4>Price:</h4>
+        <h4>Image URL:</h4>
+        <h4>Completed:</h4>
+        <h4>Edit</h4>
+        <h4>Remove</h4>
     </div>
+    <div id="todoList">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script src="app.js"></script>
 </body>

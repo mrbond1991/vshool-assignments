@@ -17,22 +17,27 @@ function info(data) {
 
         const titleH4 = document.createElement("h4")
         titleH4.textContent = data[i].title
+        titleH4.setAttribute("id", "titleEl")
         todoDiv.appendChild(titleH4)
 
         const descripH4 = document.createElement("h4")
         descripH4.textContent = data[i].description
+        descripH4.setAttribute("id", "descripEl")
         todoDiv.appendChild(descripH4)
 
         const priceH4 = document.createElement("h4")
         priceH4.textContent = data[i].price
+        priceH4.setAttribute("id", "priceEl")
         todoDiv.appendChild(priceH4)
 
         const picture = document.createElement("img")
         picture.src = data[i].imgUrl
+        picture.setAttribute("id", "picEl")
         todoDiv.appendChild(picture)
 
         const completeCheck = document.createElement("input")
         completeCheck.setAttribute("type", "checkbox")
+        completeCheck.checked = data[i].completed
         todoDiv.appendChild(completeCheck)
 
         
@@ -56,6 +61,33 @@ function info(data) {
         editBttn.textContent = "Edit"
         editBttn.style.backgroundColor = "green"
         todoDiv.appendChild(editBttn)
+        editBttn.addEventListener("click", (e) => {
+            const todoDiv = document.getElementById("todoDiv")
+
+            const picEl = document.getElementById("picEl")
+            const priceEl = document.getElementById("priceEl")
+            const descripEl = document.getElementById("descripEl")
+            const titleEl = document.getElementById("titleEl")
+
+            const picInput = document.createElement("input")
+            picInput.setAttribute("placeholder", picEl.textContent)
+            const priceInput = document.createElement("input")
+            priceInput.setAttribute("placeholder", priceEl.textContent)
+            const descripInput = document.createElement("input")
+            descripInput.setAttribute("placeholder", descripEl.textContent)
+            const titleInput = document.createElement("input")
+            titleInput.setAttribute("placeholder", titleEl.textContent)
+            
+            todoDiv.prepend(picInput)
+            todoDiv.prepend(priceInput)
+            todoDiv.prepend(descripInput)
+            todoDiv.prepend(titleInput)
+
+
+            
+            picInput.setAttribute("placeholder", )
+            todoDiv.removeChild.document.querySelectorAll("h4")
+        })
         
         const delBttn = document.createElement("button")
         delBttn.textContent = "Delete"

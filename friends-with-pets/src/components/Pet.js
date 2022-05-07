@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function Pet() {
+export default function Pet(props) {
     return (
-        <h1>Hello Pet</h1>
+        <div className='pets'>
+            {/* <h1 className='pets--name'>{props.pet.name}</h1> */}
+        </div>
     )
 }

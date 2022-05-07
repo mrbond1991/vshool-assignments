@@ -7,18 +7,39 @@ import Data from './Data';
 export default function App() {
     const friends = Data.map(friend => {
         return (
-            <FriendsList 
-                key={friend.id}
-                friend={friend}
-            />
+            <div>
+                <FriendsList 
+                    key={friend.id}
+                    friend={friend}
+                />
+                {
+                   friend.pets.map(pet => {
+                        return (
+                            <Pet 
+                                key={pet.id}
+                                pet={pet}
+                            />
+                        )
+                    })
+                }
+            </div>
         )
     })
 
+    // const pets = Data.map(pet => {
+    //     return (
+    //         <Pet 
+    //            key={pet.id}
+    //            pet={pet} 
+    //         />
+    //     )
+    // })
+
     return (
         <div>
-            {friends}
             <Friend />
-            <Pet />
+            {friends}
+            {/* {pets} */}
         </div>
     )
 }

@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button {
+    width: auto;
+    height: 50px;
+    margin: 5px;
+}
+
+.board--container {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 400px 400px;
+    justify-content: center;
+    /* justify-items: center; */
+}
+
+.board--square {
+    width: auto;
+    margin: 15px;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.button--container {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 100px 100px;
+    justify-content: center;
+}

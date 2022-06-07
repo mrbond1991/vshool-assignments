@@ -15,6 +15,7 @@ export default function App() {
         setFormData(prevFormData => {
             const {name, value} = event.target
             return {
+                ...prevFormData,
                 [name]: value
             }
         })

@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    border: black 2px solid;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+input {
+    margin: 10px;
+}
+
+button {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+    width: 15%;
+    align-content: center;
+    margin: 10px;
+}
+
+.form--textarea {
+    margin: 10px;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    height: 100px;
+}
+
+.badge--div {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    border: black 1px solid;
+    border-radius: 5px;
+    margin-top: 15px
+}
+.badge--title {
+    grid-column: 1 / -1;
+    background-color: #606060;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+p {
+    margin: 10px 50px;
+}
+
+.badge--about{
+    border: black 2px solid;
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+    height: 200px;
+    margin: 5px 50px 15px 50px;
+    text-indent: 5px;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    padding-left: 0;
+}

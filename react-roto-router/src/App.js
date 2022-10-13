@@ -4,13 +4,17 @@ import Home from './components/Home'
 import About from './components/About'
 import Services from './components/Services'
 import './styles-sheet/App.css';
-import './61af956260f89116f070219f_2-color-dark-bg.png'
+import './otaku_search_logo.png'
 
 function App() {
+
+  const img = './otaku_search_logo.png'
+
   return (
     <Router>
       <nav>
         <Link to='/'>
+          <img src={img}></img>
           Home
         </Link>
         <Link to='/about'>

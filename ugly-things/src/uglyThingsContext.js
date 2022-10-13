@@ -15,9 +15,13 @@ function UglyThingsContextProvider(props) {
     return (
         <UglyThingsContext.Provider 
             value={{
-                allUglyThings: allUglyThings,
+                title: allUglyThings.title,
+                description: allUglyThings.description,
+                imgUrl: allUglyThings.imgUrl
             }}>
-                {props.children}
+                <li>
+                    {props.children}
+                </li>
         </UglyThingsContext.Provider>
     )
 }

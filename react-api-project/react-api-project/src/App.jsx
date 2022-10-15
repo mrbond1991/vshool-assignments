@@ -1,41 +1,67 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios'
-import Home from './Home.jsx'
+import Home from './Home'
+import Manga from './Manga'
+import Anime from './Anime'
+import TopRated from './TopRated'
 import './App.css'
-import './assets/otaku_search_logo.png'
+import  otakuLogo from './assets/otaku_search_logo.png'
 
 const baseURL = "https://api.jikan.moe/v4/manga/111"
 
 function App() {
-  const [post, setPost] = useState(null);
+  // const [post, setPost] = useState(null);
 
-  const [formData, setFormData] = useState({
-    title: '',
-    genre: ''
-  })
+  // const [formData, setFormData] = useState({
+  //   title: '',
+  //   genre: ''
+  // })
 
-  function handleChange(e) {
-    setFormData(prevFormData => {
-      const {name, value} = e.target
-      return {
-        ...prevFormData,
-        [name]: value
-      }
-    })
-  }
+  // function handleChange(e) {
+  //   setFormData(prevFormData => {
+  //     const {name, value} = e.target
+  //     return {
+  //       ...prevFormData,
+  //       [name]: value
+  //     }
+  //   })
+  // }
 
-  useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPost(response.data.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get(baseURL).then((response) => {
+  //     setPost(response.data.data);
+  //   });
+  // }, []);
 
-  if (!post) return null;
+  // if (!post) return null;
 
   return (
-    <div>
-      <Home />
+    <Router>
+      <nav>
+        <Link to='/home'>
+          <img className='logo' src={otakuLogo}></img>
+        </Link>
+        <Link className='link' to='/home'>
+          Home
+        </Link>
+        <Link className='link' to='/manga'>
+          Manga
+        </Link>
+        <Link className='link' to='/anime'>
+          Anime
+        </Link>
+        <Link className='link' to='/topRated'>
+          Top Rated
+        </Link>
+      </nav>
+      
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/manga' element={<Manga />} />
+        <Route path='/anime' element={<Anime />} />
+        <Route path='/topRated' element={<TopRated />} />
+      </Routes>
       {/* <form>
         <input 
           type='text'
@@ -51,7 +77,7 @@ function App() {
         <p>{post.synopsis}</p>
         <img src={post.images.jpg.image_url} />
       </div> */}
-    </div>
+    </Router>
   );
 }
 

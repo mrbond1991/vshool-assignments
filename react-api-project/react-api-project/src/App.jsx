@@ -7,6 +7,8 @@ import Anime from './Anime'
 import TopRated from './TopRated'
 import './App.css'
 import  otakuLogo from './assets/otaku_search_logo.png'
+import { FaGithubSquare, FaDiscord, FaPatreon } from "react-icons/fa";
+
 
 const baseURL = "https://api.jikan.moe/v4/manga/111"
 
@@ -55,13 +57,43 @@ function App() {
           Top Rated
         </Link>
       </nav>
-      
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route path='/manga' element={<Manga />} />
         <Route path='/anime' element={<Anime />} />
         <Route path='/topRated' element={<TopRated />} />
       </Routes>
+      <footer className='footer'>
+        <div className='socIcons'>
+          <a
+            href='https://github.com/jikan-me/jikan'
+          >
+            <FaGithubSquare 
+              style={{backgroundColor:'#FF443A',  fontSize:'80px', color:'#FFDE59'}}
+            />
+          </a>
+          <a
+            href='https://discord.gg/4tvCr36'
+          >
+            <FaDiscord
+              style={{backgroundColor:'#FF443A',  fontSize:'80px', color:'#FFDE59'}}
+            />
+          </a>
+          <a
+            href='https://patreon.com/jikan'
+          >
+            <FaPatreon
+              style={{backgroundColor:'#FF443A',  fontSize:'70px', color:'#FFDE59'}}
+            />
+          </a>
+        </div>
+          <a href='https://jikan.moe/'>
+            <h1>Contact Us</h1>
+          </a>
+          <a href='https://docs.api.jikan.moe/#section/Information'>
+            <h1>Jikan API Website</h1>
+          </a>
+      </footer>
       {/* <form>
         <input 
           type='text'

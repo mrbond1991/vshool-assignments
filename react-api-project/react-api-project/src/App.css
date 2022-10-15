@@ -13,11 +13,31 @@
 
 nav {
   background-color: #FF443A;
-  height: 12em;
+  height: 10em;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+.footer {
+  height: 10em;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FF443A;
+  border: 1px black solid;
+}
+
+.footer > a {
+  font-size: 14px;
+  text-shadow: -2px 2px #FFDE59;
+  color: black;
+}
+
+.socIcons > a {
+  margin: 0 10px;
 }
 
 .logo {

@@ -16,7 +16,6 @@ function Home() {
                 <div className='btnDiv'>
                     <button onClick={() => navigate('/manga')}>Manga Search</button>
                     <button onClick={() => navigate('/anime')}>Anime Search</button>
-                    <button onClick={() => navigate('/topRated')}>Top Rated</button>
                 </div>
             </div>
             <img className='homePageImg' src={homePageImg}></img>

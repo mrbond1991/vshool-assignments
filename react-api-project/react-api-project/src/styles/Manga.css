@@ -1,0 +1,58 @@
+.mangaPage {
+    display: flex;
+}
+
+.mangaSearch {
+    background-color: #FFDE59;
+    color: black;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mangaSearch > h1 {
+    font-size: 80px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-shadow: -2px 4px #FF443A;
+    /* border: 1px black solid; */
+}
+
+.mangaSearch > p {
+    /* font-family: 'Caveat', cursive; */
+    font-size: 25px;
+    width: 30em;
+    margin-bottom: 30px;
+    /* border: 1px black solid; */
+}
+
+.mangaForm {
+    display: flex;
+}
+
+.mangaForm > input {
+    width: 15em;
+    height: 3em;
+    border-radius: 10px;
+    margin: 0 15px;
+    background-color: white;
+    color: black;
+    text-indent: 5px;
+    font-size: 16px;
+}
+
+.mangaSearch > button {
+    background-color: #FF443A;
+    border-radius: 20px;
+    margin: 25px 0;
+    width: 10em;
+    font-size: 20px;
+    color: black;
+}
+
+.mangaPageImg {
+    width: 50%;
+}

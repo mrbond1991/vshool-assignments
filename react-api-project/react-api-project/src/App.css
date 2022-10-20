@@ -27,7 +27,8 @@ nav {
   justify-content: space-around;
   align-items: center;
   background-color: #FF443A;
-  border: 1px black solid;
+  bottom: 0;
+  /* border: 1px black solid; */
 }
 
 .footer > a {

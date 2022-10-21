@@ -4,12 +4,13 @@ import axios from 'axios'
 import Home from './Home'
 import Manga from './Manga'
 import Anime from './Anime'
+import TopRated from './TopRated'
 import './App.css'
 import  otakuLogo from './assets/otaku_search_logo.png'
 import { FaGithubSquare, FaDiscord, FaPatreon } from "react-icons/fa";
 
 
-const baseURL = "https://api.jikan.moe/v4/top/anime"
+const baseURL = "https://api.jikan.moe/v4/manga/111"
 
 function App() {
   // const [post, setPost] = useState(null);
@@ -52,11 +53,15 @@ function App() {
         <Link className='link' to='/anime'>
           Anime
         </Link>
+        <Link className='link' to='/topRated'>
+          Top Rated
+        </Link>
       </nav>
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route path='/manga' element={<Manga />} />
         <Route path='/anime' element={<Anime />} />
+        <Route path='/topRated' element={<TopRated />} />
       </Routes>
       <footer className='footer'>
         <div className='socIcons'>
@@ -82,6 +87,7 @@ function App() {
             />
           </a>
         </div>
+
           <a href='https://jikan.moe/'>
             <h1>Contact Us</h1>
           </a>

@@ -1,74 +1,66 @@
 import {useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './styles/Manga.css'
 import mangaImg from './assets/manga_pic_2.jpg'
 
 function Manga() {
-    const navigate = useNavigate
 
-    const baseURL = "https://api.jikan.moe/v4/manga/2"
+    const [mangaList, setMangaList] = useState([])
+    const [search, setSearch] = useState("")
 
-    const [post, setPost] = useState(null);
+    function handleSearch(e) {
+        e.preventDefault();
 
-    const [formData, setFormData] = useState({
-        title: '',
-        genre: ''
-    })
-
-    function handleChange(e) {
-        setFormData(prevFormData => {
-        const {name, value} = e.target
-        return {
-            ...prevFormData,
-            [name]: value
-        }
-        })
+        FetchManga(search)
     }
 
-    useEffect(() => {
-        axios.get(baseURL).then((response) => {
-        setPost(response.data.data);
-        });
-    }, []);
+    const FetchManga = async (query) => {
+        await axios.get(`https://api.jikan.moe/v4/manga?q=${query}?order_by=title?sort=asc&limit=10`).then((res) => {
+            setMangaList(res.data.data)
 
-    if (!post) return null;
+            console.log(res.data.data)
+        })
+    }
 
     return (
         <>
             <div className='mangaPage'>
                 <div className='mangaSearch'>
                     <h1>Manga Search</h1>
-                    <p>Search by title, genre, or volume</p>
-                    <form className='mangaForm'>
-                        <input 
-                            type='text'
-                            placeholder='Title'
-                            onChange={handleChange}
-                            name="title"
-                            className='form-input'
-                            value={formData.title}
-                        />
-                        <input 
-                            type='text'
-                            placeholder='Genre'
-                            onChange={handleChange}
-                            name="genre"
-                            className='form-input'
-                            value={formData.genre}
-                        />
-                        <input 
-                        
-                        />
+                    <p>Search by title</p>
+                    <form 
+                        className='mangaForm'
+                        onSubmit={handleSearch}
+                    >
+                        <div>
+                            <input 
+                                type='text'
+                                placeholder='Title'
+                                onChange={e => setSearch(e.target.value)}
+                                name="title"
+                                className='form-input'
+                                value={search.title}
+                            />
+                        </div>
+                        <button>Search</button>
                     </form>
-                    <button>Search</button>
                 </div>
                 <img className='mangaPageImg' src={mangaImg}></img>
             </div>
-            <div>
-                <h1>{post.title}</h1>
-                <p>{post.synopsis}</p>
-                <img src={post.images.jpg.image_url} />
+            <div className='mangaList'>
+                {mangaList.map(manga => (
+                    <div
+                        className='mangaListDiv'
+                        key={manga.mal_id}
+                    >
+                        <h3>{manga.title}</h3>
+                        
+                        <a 
+                            href={manga.url}
+                            target="_blank"
+                        ><img src={manga.images.jpg.image_url} alt="Manga Image"/></a>
+                    </div>
+                ))}
             </div>
         </>
     )

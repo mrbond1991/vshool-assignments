@@ -58,3 +58,33 @@
 .animePageImg {
     width: 50%;
 }
+
+.animeList {
+    background-color: black;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    grid: auto auto / 20% 20% 20% 20% 20%;
+}
+
+.animeList > div {
+    background-color: #FFDE59;
+    padding: 5px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 15px;
+}
+
+.animeList > div > h3 {
+    font-size: 20px;
+    color: black;
+}
+
+.animeList > div > img {
+    width: 50%;
+}

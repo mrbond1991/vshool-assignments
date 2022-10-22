@@ -1,17 +1,12 @@
 import {useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './styles/Anime.css'
 import homePageImg from './assets/home_page_img.jpg'
 
 function Anime() {
-    const navigate = useNavigate
+
     const [animeList, setAnimeList] = useState([])
     const [search, setSearch] = useState("")
-
-    const baseURL = "https://api.jikan.moe/v4/manga/111"
-
-    const [post, setPost] = useState(null);
 
     function handleSearch(e) {
         e.preventDefault();
@@ -26,14 +21,6 @@ function Anime() {
             console.log(res.data.data)
         })
     }
-
-    useEffect(() => {
-        axios.get(baseURL).then((response) => {
-        setPost(response.data.data);
-        });
-    }, []);
-
-    if (!post) return null;
 
     return (
         <>
@@ -68,12 +55,11 @@ function Anime() {
                         key={anime.mal_id}
                     >
                         <h3>{anime.title}</h3>
-                        <img src={anime.images.jpg.image_url} alt="Anime Image"/>
-                        <p>{anime.synopsis}</p>
+                        
                         <a 
                             href={anime.url}
                             target="_blank"
-                        >Click here to see page!</a>
+                        ><img src={anime.images.jpg.image_url} alt="Anime Image"/></a>
                     </div>
                 ))}
             </div>

@@ -17,15 +17,12 @@
     margin-top: -10px;
     margin-bottom: 15px;
     text-shadow: -2px 4px #FF443A;
-    /* border: 1px black solid; */
 }
 
 .search > p {
-    /* font-family: 'Caveat', cursive; */
     font-size: 25px;
     width: 30em;
     margin-bottom: 30px;
-    /* border: 1px black solid; */
 }
 
 .homePageImg {
@@ -34,7 +31,6 @@
 
 .btnDiv {
     width: 60em;
-    /* border: 1px black solid; */
 }
 
 .btnDiv > button {

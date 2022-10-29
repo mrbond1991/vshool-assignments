@@ -35,6 +35,7 @@ function App() {
         <div className='socIcons'>
           <a
             href='https://github.com/jikan-me/jikan'
+            target='_blank'
           >
             <FaGithubSquare 
               style={{backgroundColor:'#FF443A',  fontSize:'80px', color:'#FFDE59'}}
@@ -42,6 +43,7 @@ function App() {
           </a>
           <a
             href='https://discord.gg/4tvCr36'
+            target='_blank'
           >
             <FaDiscord
               style={{backgroundColor:'#FF443A',  fontSize:'80px', color:'#FFDE59'}}
@@ -49,6 +51,7 @@ function App() {
           </a>
           <a
             href='https://patreon.com/jikan'
+            target='_blank'
           >
             <FaPatreon
               style={{backgroundColor:'#FF443A',  fontSize:'70px', color:'#FFDE59'}}
@@ -56,10 +59,16 @@ function App() {
           </a>
         </div>
 
-          <a href='https://jikan.moe/'>
+          <a 
+            href='https://jikan.moe/'
+            target='_blank'
+          >
             <h1>Contact Us</h1>
           </a>
-          <a href='https://docs.api.jikan.moe/#section/Information'>
+          <a 
+            href='https://docs.api.jikan.moe/#section/Information'
+            target='_blank'
+          >
             <h1>Jikan API Website</h1>
           </a>
       </footer>

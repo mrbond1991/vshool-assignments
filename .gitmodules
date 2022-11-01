@@ -1,0 +1,3 @@
+[submodule "group-meme-generator"]
+	path = group-meme-generator
+	url = https://github.com/jesslrobertson/group-meme-generator

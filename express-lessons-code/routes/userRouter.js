@@ -11,16 +11,26 @@ const users = [
 ]
 
 
-userRouter.get("/", (req, res) => {
-    res.send(users)
-  })
+// userRouter.get("/", (req, res) => {
+//     res.send(users)
+//   })
   
-userRouter.post("/", (req, res) => {
-const newUser = req.body
-newUser._id = uuid()
-users.push(newUser)
-res.send( `Successfully added ${newUser.name} to the database!` )
-})
+// userRouter.post("/", (req, res) => {
+// const newUser = req.body
+// newUser._id = uuid()
+// users.push(newUser)
+// res.send( `Successfully added ${newUser.name} to the database!` )
+// })
 
+userRouter.route("/")
+    .get((req, res) => {
+        res.send(users)
+    })
+    .post((req, res) => {
+        const newUser = req.body
+        newUser._id = uuid()
+        users.push(newUser)
+        res.send( `Successfully added ${newUser.name} to the database!` )
+    })
 
 module.exports = userRouter

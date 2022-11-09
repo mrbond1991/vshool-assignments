@@ -22,3 +22,13 @@
 # Nodemon
   * npm install -g nodemon
 
+# Middleware - a function that fires on the inbetween
+
+# Request Body (req.body)
+
+# UUID - creates unique IDs
+  - npm install uuid
+
+# Express Router - Enables to modularize our routes in express
+
+# Modular file organization

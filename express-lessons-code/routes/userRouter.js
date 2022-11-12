@@ -10,6 +10,13 @@ const users = [
     { name: "david", age: 63, _id: uuid() }
 ]
 
+//Get One
+userRouter.get("/:userId", (req, res) => {
+    const userId = req.params.userId
+    const foundUser = users.find(user => user._id === userId)
+    res.send(foundUser)
+})
+
 userRouter.route("/")
     .get((req, res) => {
         res.send(users)

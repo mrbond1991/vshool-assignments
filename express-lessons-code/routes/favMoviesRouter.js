@@ -12,7 +12,14 @@ const favMovies = [
 //   favMovieRouter.get("/", (req, res) => {
 //     res.send(favMovies)
 //   })
-  
+
+// Get One
+favMovieRouter.get("/:favMovieId", (req, res) => {
+  const favMovieId = req.params.favMovieId
+  const foundFavMovie = favMovies.find(favMovie => favMovie._id === favMovieId)
+  res.send(foundFavMovie)
+})
+
 //   favMovieRouter.post("/", (req, res) => {
 //     const newFavMovie = req.body
 //     newFavMovie._id = uuid()

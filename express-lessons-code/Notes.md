@@ -32,3 +32,13 @@
 # Express Router - Enables to modularize our routes in express
 
 # Modular file organization
+
+# URL Parameters
+
+  # Parts of a URL
+   * Base - http://amazon.com
+   * Endpoint - http://amazon.com/images
+   * Parameter - http://amazon.com/image/3216546987sfv
+   * Query
+
+  # Parameters (req.params) - GET One

@@ -10,18 +10,6 @@ const users = [
     { name: "david", age: 63, _id: uuid() }
 ]
 
-
-// userRouter.get("/", (req, res) => {
-//     res.send(users)
-//   })
-  
-// userRouter.post("/", (req, res) => {
-// const newUser = req.body
-// newUser._id = uuid()
-// users.push(newUser)
-// res.send( `Successfully added ${newUser.name} to the database!` )
-// })
-
 userRouter.route("/")
     .get((req, res) => {
         res.send(users)

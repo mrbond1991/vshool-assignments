@@ -23,7 +23,12 @@
   * npm install -g nodemon
 
 # Middleware - a function that fires on the inbetween
-
+  # What is it?
+    * app.use()
+      1. (optional) - Mount Path ( endpoint )
+      2. Callback Function - receives request, reponse objects, also the 'next' function
+  # The "next" function
+    * Moves on to the middleware in line on our server
 # Request Body (req.body)
 
 # UUID - creates unique IDs

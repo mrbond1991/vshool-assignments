@@ -17,6 +17,14 @@ userRouter.get("/:userId", (req, res) => {
     res.send(foundUser)
 })
 
+//Delete One
+userRouter.delete("/:userId", (req, res) => {
+    const userId = req.params.userId
+    const userIndex = users.findIndex(user => user._id === userId)
+    users.splice(userIndex, 1)
+    res.send("Succefully deleted user!")
+})
+
 userRouter.route("/")
     .get((req, res) => {
         res.send(users)

@@ -35,20 +35,17 @@ const inventoryItems = [
 ]
 
 inventoryItemsRouter.get("/search/itemName", (req, res) => {
-    const itemName = req.query.itemName
-    const filteredNameInventoryItem = inventoryItems.filter(name => name.name === itemName)
+    const filteredNameInventoryItem = inventoryItems.filter(item => item.name === req.query.itemName)
     res.send(filteredNameInventoryItem)
 })
 
 inventoryItemsRouter.get("/search/itemType", (req, res) => {
-    const itemType = req.query.itemType
-    const filteredItemType = inventoryItems.filter(item => item.type === itemType)
+    const filteredItemType = inventoryItems.filter(item => item.type === req.query.itemType)
     res.send(filteredItemType)
 })
 
 inventoryItemsRouter.get("/search/itemPrice", (req, res) => {
-    const itemPrice = req.query.itemPrice
-    const filteredItemPrice = inventoryItems.filter(item => item.price === itemPrice)
+    const filteredItemPrice = inventoryItems.filter(item => item.price === req.query.itemPrice)
     res.send(filteredItemPrice)
 })
 

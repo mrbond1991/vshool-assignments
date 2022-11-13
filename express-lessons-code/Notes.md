@@ -42,3 +42,10 @@
    * Query
 
   # Parameters (req.params) - GET One
+
+  # URL Queries
+
+    # Query Strings - (typically to filter results)
+      * Begins with the "?".
+      * Built of key=value pairs.
+      * Multiple queries separated by the "&".

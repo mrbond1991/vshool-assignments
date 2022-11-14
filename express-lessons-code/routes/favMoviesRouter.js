@@ -59,7 +59,7 @@ favMovieRouter.get("/search/genre", (req, res) => {
         newFavMovie._id = uuid()
         favMovies.push(newFavMovie)
         res.send( `Successfully added ${newFavMovie.title} to the database!` )
-      })
+    })
 
 
 module.exports = favMovieRouter

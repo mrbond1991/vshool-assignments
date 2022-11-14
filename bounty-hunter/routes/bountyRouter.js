@@ -45,10 +45,26 @@ const bounties = [
     }
 ]
 
+// PUT/UPDATE
+bountyRouter.put("/:bountyId", (req, res) => {
+    const bountyIndex = bounties.findIndex(bounty => bounty._id === req.params.bountyId)
+    const updatedBounty = Object.assign(bounties[bountyIndex], req.body)
+    res.send(updatedBounty)
+})
+
+// DELETE
+bountyRouter.delete("/:bountyId", (req, res) => {
+    const bountyIndex = bounties.findIndex(bounty => bounty._id === req.params.bountyId)
+    bounties.splice(bountyIndex, 1)
+    res.send("Congratulations, the bounty has been eliminated. Check you account for the bounty amount.")
+})
+
 bountyRouter.route("/")
+    // GET ALL
     .get((req, res) => {
         res.send(bounties)
     })
+    // POST ONE
     .post((req, res) => {
         const newBounty = req.body
         newBounty._id = uuid()

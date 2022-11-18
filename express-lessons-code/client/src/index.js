@@ -1,7 +1,8 @@
 import React from "react"
-import { ReactDOM } from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App"
 
 // axois.get("/users")
 // axios.get("http://rickandmortyapi.com")
 
-React.render(<h1>Hellow World</h1>, document.getElementById('root'))
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)

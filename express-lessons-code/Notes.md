@@ -54,3 +54,8 @@
       * Begins with the "?".
       * Built of key=value pairs.
       * Multiple queries separated by the "&".
+
+# Console Errors in Express
+
+  # Use A logger
+    * npm install morgan

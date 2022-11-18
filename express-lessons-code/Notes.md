@@ -59,3 +59,13 @@
 
   # Use A logger
     * npm install morgan
+
+# Connecting the Front-end to the Back-end
+
+  # Folder Structure
+    * create a 'client' folder to host react app
+    * npx create-react-app .
+    * get rid of everything in 'src' and create boiler plate index.js file
+  # Proxy
+    * go to package.json in client/src/package.json
+    * after last object curly, add '"proxy": "http:localhost:9000" <--- <endpoint for app>' to connect front end with back end.

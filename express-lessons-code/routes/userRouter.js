@@ -41,7 +41,7 @@ userRouter.route("/")
         const newUser = req.body
         newUser._id = uuid()
         users.push(newUser)
-        res.send( `Successfully added ${newUser.name} to the database!` )
+        res.send( newUser )
     })
 
 module.exports = userRouter

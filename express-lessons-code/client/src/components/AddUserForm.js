@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function AddUserForm(props) {
-    const initInputs = { name: "", age: "" }
+    const initInputs = { name: props.name || "", age: props.age || "" }
     const [inputs, setInputs] = useState(initInputs)
 
     function handleChange(e) {
@@ -11,19 +11,19 @@ export default function AddUserForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(inputs)
-        props.addUser(inputs)
+        props.submit(inputs, props._id)
         setInputs(initInputs)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
             <input 
                 type="text" 
                 name="name" 
                 value={inputs.name}
                 onChange={handleChange} 
                 placeholder="Name"
+                className='form-input'
             />
             <input 
                 type="num" 
@@ -31,8 +31,11 @@ export default function AddUserForm(props) {
                 value={inputs.age} 
                 onChange={handleChange} 
                 placeholder="Age"
+                className='form-input'
             />
-            <button>Add User</button>
+            <button
+                className='form-button'
+            >{ props.btnText }</button>
         </form>
     )
 }

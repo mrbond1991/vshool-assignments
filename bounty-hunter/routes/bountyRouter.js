@@ -75,7 +75,7 @@ bountyRouter.route("/")
         const newBounty = req.body
         newBounty._id = uuid()
         bounties.push(newBounty)
-        res.send( `Successfully added ${newBounty.fName} ${newBounty.lName} to your Bounties List` )
+        res.send( newBounty )
     })
 
 module.exports = bountyRouter

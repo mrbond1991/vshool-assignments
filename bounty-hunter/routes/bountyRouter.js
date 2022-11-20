@@ -45,6 +45,12 @@ const bounties = [
     }
 ]
 
+// GET ONE
+bountyRouter.get("/:bountyId", (req, res) => {
+    const foundBounty = bounties.find(bounty => bounty._id === req.params.bountyId)
+    res.send(foundBounty)
+})
+
 // PUT/UPDATE
 bountyRouter.put("/:bountyId", (req, res) => {
     const bountyIndex = bounties.findIndex(bounty => bounty._id === req.params.bountyId)

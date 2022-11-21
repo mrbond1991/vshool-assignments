@@ -6,7 +6,6 @@ export default function AddBountyForm(props) {
         lName: props.lName || "",
         type: props.type || "",
         bountyAmount: props.bountyAmount || "",
-        living: true,
     }
     const [inputs, setInputs] = useState(initInputs)
 
@@ -22,51 +21,46 @@ export default function AddBountyForm(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="form">
-            <input
-                type="text"
-                name="fName"
-                value={inputs.fName}
-                onChange={handleChange}
-                placeholder="First Name"
-                className="form-input"
-            />
-            <input
-                type="text"
-                name="lName"
-                value={inputs.lName}
-                onChange={handleChange}
-                placeholder="Last Name"
-                className="form-input"
-            />
-            <input
-                type="text"
-                name="type"
-                value={inputs.type}
-                onChange={handleChange}
-                placeholder="Jedi or Sith?"
-                className="form-input"
-            />
-            <input
-                type="num"
-                name="bountyAmount"
-                value={inputs.bountyAmount}
-                onChange={handleChange}
-                placeholder="Bounty Amount"
-                className="form-input"
-            />
-            <input
-                type="text"
-                name="living"
-                value={inputs.living}
-                onChange={handleChange}
-                placeholder="Bounty Amount"
-                className="form-input"
-            />
-            <button
-                className='form-btn'>
-                {props.btnText}
-            </button>
-        </form>
+        <div className='form-container'>
+            <h1>Add Bounty</h1>
+            <form onSubmit={handleSubmit} className="form">
+                <input
+                    type="text"
+                    name="fName"
+                    value={inputs.fName}
+                    onChange={handleChange}
+                    placeholder="First Name"
+                    className="form-input"
+                />
+                <input
+                    type="text"
+                    name="lName"
+                    value={inputs.lName}
+                    onChange={handleChange}
+                    placeholder="Last Name"
+                    className="form-input"
+                />
+                <input
+                    type="text"
+                    name="type"
+                    value={inputs.type}
+                    onChange={handleChange}
+                    placeholder="Jedi or Sith?"
+                    className="form-input"
+                />
+                <input
+                    type="num"
+                    name="bountyAmount"
+                    value={inputs.bountyAmount}
+                    onChange={handleChange}
+                    placeholder="Bounty Amount"
+                    className="form-input"
+                />
+                <button
+                    className='form-btn'>
+                    {props.btnText}
+                </button>
+            </form>
+        </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AddBountyForm from './AddBountyForm'
 
 export default function Bounty(props) {
-    const { fName, lName, type, bountyAmount, living, _id } = props
+    const { fName, lName, type, bountyAmount, living, _id, bounties } = props
     const [editToggle, setEditToggle] = useState(false)
 
     return (
@@ -10,19 +10,20 @@ export default function Bounty(props) {
             { !editToggle ?
                 <>
                     <h1>Name: {fName} {lName}</h1>
-                    <h2>Type: {type}</h2>
-                    <h2>Bounty: {bountyAmount}</h2>
-                    <h3>Is the target alive?: {`${living}`}</h3>
-                    <button
-                        className='dlt-btn'
-                        onClick={() => props.deleteBounty(_id)}>
-                        Complete Bounty
-                    </button>
-                    <button
-                        className='edit-btn'
-                        onClick={() => setEditToggle(prevToggle => !prevToggle)}>
-                        Edit Bounty
-                    </button>
+                    <h1>Type: {type}</h1>
+                    <h1>Bounty: {bountyAmount}</h1>
+                    <div className='btn-container'>
+                        <button
+                            className='dlt-btn'
+                            onClick={() => props.deleteBounty(_id)}>
+                            Complete Bounty
+                        </button>
+                        <button
+                            className='edit-btn'
+                            onClick={() => setEditToggle(prevToggle => !prevToggle)}>
+                            Edit Bounty
+                        </button>
+                    </div>
                 </>
             :
                 <>

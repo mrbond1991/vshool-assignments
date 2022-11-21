@@ -69,3 +69,13 @@
   # Proxy
     * go to package.json in client/src/package.json
     * after last object curly, add '"proxy": "http:localhost:9000" <--- <endpoint for app>' to connect front end with back end.
+
+# Status Code
+
+  # 200 - Successful Request
+  # 201 - Successful Insert / Successful Update
+  # 401 - Unauthorized
+  # 404 - Not found
+  # 500 - Server Error
+
+  # https://http.cat

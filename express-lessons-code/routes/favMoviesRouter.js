@@ -30,9 +30,13 @@ const favMovies = [
 //   })
 
 // Get One
-favMovieRouter.get("/:favMovieId", (req, res) => {
+favMovieRouter.get("/:favMovieId", (req, res, next) => {
   const favMovieId = req.params.favMovieId
   const foundFavMovie = favMovies.find(favMovie => favMovie._id === favMovieId)
+  if(!foundFavMovie) {
+    const error = new Error("The item was not found.")
+    return next(error)
+  }
   res.send(foundFavMovie)
 })
 

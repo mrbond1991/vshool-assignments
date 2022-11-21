@@ -9,7 +9,7 @@ export default function App() {
     function getUsers() {
         axios.get("/users")
             .then(res => setUsers(res.data))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     function addUser(newUser) {
@@ -17,7 +17,7 @@ export default function App() {
             .then(res => {
                 setUsers(prevUsers => [...prevUsers, res.data])
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     function deleteUser(userId) {
@@ -25,7 +25,7 @@ export default function App() {
             .then(res => {
                 setUsers(prevUsers => prevUsers.filter(user => user._id !== userId))
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     function editUser(updates, userId) {
@@ -33,7 +33,7 @@ export default function App() {
             .then(res => {
                 setUsers(prevUsers => prevUsers.map(user => user._id !== userId ? user : res.data))
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     useEffect(() => {

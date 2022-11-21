@@ -11,37 +11,52 @@ const users = [
 ]
 
 //Get One
-userRouter.get("/:userId", (req, res) => {
+userRouter.get("/:userId", (req, res, next) => {
     const userId = req.params.userId
     const foundUser = users.find(user => user._id === userId)
-    res.send(foundUser)
+    if(!foundUser) {
+        const error = new Error(`The user with id ${userId} was not found.`)
+        res.status(500)
+        return next(error)
+    }
+    res.status(200).send(foundUser)
 })
 
 //Delete One
-userRouter.delete("/:userId", (req, res) => {
+userRouter.delete("/:userId", (req, res, next) => {
     const userId = req.params.userId
     const userIndex = users.findIndex(user => user._id === userId)
     users.splice(userIndex, 1)
-    res.send("Succefully deleted user!")
+    if(!userIndex) {
+        const error = new Error(`The user with id ${userId} was not found`)
+        res.status(500)
+        return next(error)
+    }
+    res.status(200).send("Succefully deleted user!")
 })
 
 //Update One
-userRouter.put("/:userId", (req, res) => {
+userRouter.put("/:userId", (req, res, next) => {
     const userId = req.params.userId
     const userIndex = users.findIndex(user => user._id === userId)
     const updatedUser = Object.assign(users[userIndex], req.body)
-    res.send(updatedUser)
+    if(!updatedUser) {
+        const error = new Error(`The user with id ${userId} was not found`)
+        res.status(500)
+        return next(error)
+    }
+    res.status(201).send(updatedUser)
 })
 
 userRouter.route("/")
     .get((req, res) => {
-        res.send(users)
+        res.status(200).send(users)
     })
     .post((req, res) => {
         const newUser = req.body
         newUser._id = uuid()
         users.push(newUser)
-        res.send( newUser )
+        res.status(201).send( newUser )
     })
 
 module.exports = userRouter

@@ -79,3 +79,12 @@
   # 500 - Server Error
 
   # https://http.cat
+
+# Intro to Mongoose
+  # npm install mongoose
+
+  # Purpose
+    * Create models
+    * Query data
+
+  # Connect

@@ -7,14 +7,16 @@ app.use(express.json())
 app.use(morgan('dev')) // logs requests to the console.
 
 // Connect to DataBase
-mongoose.connect('mongodb://localhost:27017/usersdb', () => console.log('connected to database'))
+mongoose.connect( 
+    'mongodb://localhost:27017/usersdb', 
+    () => console.log('connected to database'
+))
 
 // Routes //
 app.use("/users", require("./routes/userRouter.js"))
 app.use("/favMovies", require("./routes/favMoviesRouter.js"))
 
 //Error Handler
-
 app.use((err, req, res, next) => {
     console.log(err)
     return res.send({errMsg: err.message})

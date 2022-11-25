@@ -1,14 +1,6 @@
 const express = require('express')
 const userRouter = express.Router()
-const {v4: uuid} = require("uuid")
-
-const users = [
-    { name: "John Bond", age: 32, _id: uuid() },
-    { name: "Mike Bond", age: 31, _id: uuid() },
-    { name: "Aly Bond", age: 28, _id: uuid() },
-    { name: "Inge Bond", age: 73, _id: uuid() },
-    { name: "David Bond", age: 63, _id: uuid() }
-]
+const User = require('../models/user.js')
 
 //Get One
 userRouter.get("/:userId", (req, res, next) => {
@@ -49,14 +41,27 @@ userRouter.put("/:userId", (req, res, next) => {
 })
 
 userRouter.route("/")
-    .get((req, res) => {
-        res.status(200).send(users)
+    //Get All
+    .get((req, res, next) => {
+        User.find((err, users) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(users)
+        })
     })
-    .post((req, res) => {
-        const newUser = req.body
-        newUser._id = uuid()
-        users.push(newUser)
-        res.status(201).send( newUser )
+
+    //Post One
+    .post((req, res, next) => {
+        const newUser = new User(req.body)
+        newUser.save((err, savedUser) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(savedUser)
+        })
     })
 
 module.exports = userRouter

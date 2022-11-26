@@ -20,7 +20,19 @@ p {
     margin: 0 32px;
 }
 
+.favMovie-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 32px;
+}
+
 .user {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 5px;
+}
+
+.favMovie {
     border: 1px solid #333;
     padding: 10px;
     margin: 5px;

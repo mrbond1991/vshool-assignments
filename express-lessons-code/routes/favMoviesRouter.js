@@ -22,24 +22,29 @@ favMovieRouter.get("/search/genre", (req, res) => {
 
 //Delete One
 favMovieRouter.delete("/:favMovieId", (req, res, next) => {
-  const favMovieId = req.params.favMovieId
-  const favMovieIndex = favMovies.findIndex(movie => movie._id === favMovieId)
-  favMovies.splice(favMovieIndex, 1)
-  // THIS ERROR IS WRONG AND NEEDS CORRECTING
-  // if(!favMovieIndex) {
-  //   const error = new Error(`The movie with id ${favMovieId} was not found`)
-  //   res.status(500)
-  //   return next(error)
-  // }
-  res.status(200).send("Successfully deleted movie!")
+  FavMovie.findOneAndDelete({ _id: req.params.favMovieId }, (err, deletedFavMovie) => {
+    if(err) {
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(`Successfully deleted item ${deletedFavMovie.title} from the database!`)
+  })
 })
 
 // Update One
 favMovieRouter.put("/:favMovieId", (req, res, next) => {
-  const favMovieId = req.params.favMovieId
-  const favMovieIndex = favMovies.findIndex(movie => movie._id === favMovieId)
-  const updatedFavMovie = Object.assign(favMovies[favMovieIndex], req.body)
-  res.status(200).send(updatedFavMovie)
+  FavMovie.findOneAndUpdate(
+    { _id: req.params.favMovieId },
+    req.body,
+    { new: true },
+    (err, updatedFavMovie) => {
+      if(err) {
+        res.status(500)
+        return next(err)
+      }
+      return res.status(201).send(updatedFavMovie)
+    }
+  )
 })
 
   favMovieRouter.route("/")
@@ -53,6 +58,8 @@ favMovieRouter.put("/:favMovieId", (req, res, next) => {
         return res.status(200).send(movies)
       })
     })
+
+    //Post One
     .post((req, res, next) => {
       const newFavMovie = new FavMovie(req.body)
       newFavMovie.save((err, savedMovie) => {

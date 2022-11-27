@@ -1,4 +1,5 @@
 const express = require("express")
+const favMovies = require("../models/favMovies.js")
 const favMovieRouter = express.Router()
 const FavMovie = require('../models/favMovies.js')
 
@@ -14,10 +15,14 @@ favMovieRouter.get("/:favMovieId", (req, res, next) => {
 })
 
 // Get by genre
-favMovieRouter.get("/search/genre", (req, res) => {
-  const genre = req.query.genre
-  const filteredFavMovies = favMovies.filter(movie => movie.genre === genre)
-  res.send(filteredFavMovies)
+favMovieRouter.get("/search/genre", (req, res, next) => {
+  FavMovie.find({ genre: req.query.genre }, (err, favMovies) => {
+    if(err) {
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(favMovies)
+  })
 })
 
 //Delete One

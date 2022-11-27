@@ -27,6 +27,7 @@ export default function FavMovie(props) {
                     <AddFavMovieForm
                         title= { title }
                         genre= { genre }
+                        _id={props._id}
                         btnText="Submit Edit"
                         submit={ props.editFavMovie}
                     />

@@ -64,9 +64,21 @@ export default function App() {
     function editFavMovie(updates, favMovieId) {
         axios.put(`/favMovies/${favMovieId}`, updates)
             .then(res =>  {
-                setFavMovies(prevFavMovies => prevFavMovies.map(favMovie => favMovie._id !== favMovieId ? favMovie : res.data))
+                console.log(favMovieId)
+                setFavMovies(prevFavMovies => prevFavMovies.map(movie => movie._id !== favMovieId ? movie : res.data))
             })
             .catch(err => console.log(err.response.data.errMsg))
+        console.log(updates, favMovieId)
+    }
+
+    function handleFilter(e) {
+        if(e.target.value === "reset") {
+            getFavMovies()
+        } else {
+            axios.get(`/favMovies/search/genre?genre=${e.target.value}`)
+                .then(res => setFavMovies(res.data))
+                .catch(err => console.log(err))
+        }
     }
 
     useEffect(() => {
@@ -81,6 +93,8 @@ export default function App() {
                     submit={ addUser }
                     btnText="Add User"
                 />
+
+
                 {
                     users.map(user => 
                         <User
@@ -97,6 +111,13 @@ export default function App() {
                     submit={ addFavMovie }
                     btnText="Add Movie"    
                 />
+                <h4>Filter by Genre</h4>
+                <select onChange={handleFilter} className="filter-form">
+                    <option value="reset">All Movies</option>
+                    <option value="action">Action</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="history">History</option>
+                </select>
                 {
                     favMovies.map(favMovie => 
                         <FavMovie

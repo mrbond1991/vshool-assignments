@@ -1,5 +1,4 @@
 const express = require('express')
-const inventory = require('../models/inventory.js')
 const inventoryRouter = express.Router()
 const Inventory = require('../models/inventory.js')
 

@@ -4,14 +4,13 @@ const User = require('../models/user.js')
 
 //Get One
 userRouter.get("/:userId", (req, res, next) => {
-    const userId = req.params.userId
-    const foundUser = users.find(user => user._id === userId)
-    if(!foundUser) {
-        const error = new Error(`The user with id ${userId} was not found.`)
-        res.status(500)
-        return next(error)
-    }
-    res.status(200).send(foundUser)
+    User.find({_id: req.params.userId}, (err, foundUser) => {
+        if(err) {
+            res.status(500)
+            return next(err)
+        }
+        res.status(200).send(foundUser)
+    })
 })
 
 //Delete One

@@ -3,8 +3,8 @@ const bookRouter = express.Router()
 const Book = require('../models/book.js')
 
 //Delete One
-bookRouter.delete('/:bookId', (req, res, next) => {
-    Book.findOneAndDelete({_id: req.params.bookId}, (err, deletedBook) => {
+bookRouter.delete('/:bookID', (req, res, next) => {
+    Book.findOneAndDelete({_id: req.params.bookID}, (err, deletedBook) => {
         if(err) {
             res.status(500)
             return next(err)
@@ -46,6 +46,33 @@ bookRouter.post("/:authorID", (req, res, next) => {
                 return next(err)
             }
             return res.status(200).send(savedBook)
+        })
+    })
+
+    //like a book
+    bookRouter.put("/like/:bookID", (req, res, next) => {
+        Book.findOneAndUpdate(
+            { _id: req.params.bookID},
+            { $inc: { likes: 1 } },
+            { new: true },
+            (err, updatedBook) => {
+                if(err) {
+                    res.status(500)
+                    return next(err)
+                }
+                return res.status(201).send(updatedBook)
+            }
+        )
+    })
+
+    // find books by like range
+    bookRouter.get("/search/bylikes", (req, res, next) => {
+        Book.where("likes").gte(5).exec((err, book) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(book)
         })
     })
 

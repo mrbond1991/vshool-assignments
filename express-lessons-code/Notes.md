@@ -95,3 +95,51 @@
 # Mongoose Models
   * Models have a Name, and a Blueprint (Schema)
   * Models are used to perform the CRUD operations on data created with the Model
+
+# Git Collaboration
+
+  git branch
+  git checkout - creates branch
+  git merge - merges two versions of code
+
+# Start the Repo, clone master
+
+  1. Create git repository on github
+    -One person creates
+  2. Connet/clone locally
+  3. Set up the code base
+    - git add -A
+    - git commit -m "initial commit"
+    - git push
+  --
+  4. Clone the repository
+    - git clone <pasted command github> (NEVER CODE ON MASTER, ALWAYS CODE ON BRANCH)
+  5. Create a feature branch
+    - git branch <branchName>
+    - Example: git branch server-setup
+  6. Checkout to that branch
+    - git checkout <branchName>
+    - Example: git checkout server-setup
+  7. Commit and push branch to github
+    - git add -A
+    - git commit -m "initial commit"
+    - git push
+      - git will sent a message in console that says we need to create a Remote Branch. Copy and past the command given to move forward
+  8. git checkout master
+  9. Pull down remote master
+    - git pull
+  10. checkout back to local branch
+    - git checkout <branchName>
+    - Example: git checkout server-setup
+  11. Merge local master into local branch
+    - git merge --no-ff master
+    - if goes well
+      - shift + ZZ
+    - if it goes badly
+      - Resolve conflicts locally
+  12. push branch to github
+    - git add -A
+    - git commit -m "initial commit"
+    - git push
+  13. Create Pull Request on github
+  14. Git checkout to master & git pull

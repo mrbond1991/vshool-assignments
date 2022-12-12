@@ -15,7 +15,7 @@ function Manga() {
     }
 
     const FetchManga = async (query) => {
-        await axios.get(`https://api.jikan.moe/v4/manga?q=${query}?order_by=title?sort=asc&limit=10`).then((res) => {
+        await axios.get(`https://api.jikan.moe/v4/manga?q=${query}?order_by=title?sort=asc&limit=20`).then((res) => {
             setMangaList(res.data.data)
 
             console.log(res.data.data)

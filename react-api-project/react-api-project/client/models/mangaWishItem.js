@@ -10,3 +10,5 @@ const mangaWishListItemSchema = new Schema({
         type: String,
     }
 })
+
+module.exports = mongoose.model("MangaWishListItem", mangaWishListItemSchema)

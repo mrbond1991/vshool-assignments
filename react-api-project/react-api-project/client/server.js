@@ -13,8 +13,8 @@ mongoose.connect(
 
 app.use("/animeWishList", require("./routes/animeWLRouter.js"))
 app.use("/mangaWishList", require("./routes/mangaWLRouter.js"))
-app.use("/animeWatchList", require("./routes/animeWatched.js"))
-app.use("/mangaWatchList", require("./routes/mangaWatched.js"))
+app.use("/animeWatchList", require("./routes/animeWatchedRouter.js"))
+app.use("/mangaWatchList", require("./routes/mangaWatchedRouter.js"))
 
 app.use((err, req, res, next) => {
     console.log(err)

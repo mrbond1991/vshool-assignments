@@ -22,7 +22,7 @@ function App() {
       .catch(err => console.log(err))
   }
 
-  //Post new Watch List Item
+  //Post One
   function addMangaWatchListItem(newMangaListItem) {
     axios.post('/mangaWatchList')
       .then(res => {
@@ -31,11 +31,20 @@ function App() {
       .catch(err => console.log(err))
   }
 
-  //Delete Watch List Item
+  //Delete One
   function deleteWatchListItem(mangaWatchListID) {
     axios.delete(`/mangaWatchList/${mangaWatchListID}`)
       .then(res => {
         setMangaWatchList(prevMangaWatchList => prevMangaWatchList.filter(item => item._id !== mangaWatchListID))
+      })
+      .catch(err => console.log(err))
+  }
+
+  //Edit One
+  function editWatchListItem(updates, mangaWatchListID) {
+    axios.put(`/mangaWatchList/${mangaWatchListID}`, updates)
+      .then(res => {
+        setMangaWatchList(prevMangaWatchList => prevMangaWatchList.map(item => item._id !== mangaWatchListID ? item : res.data))
       })
       .catch(err => console.log(err))
   }

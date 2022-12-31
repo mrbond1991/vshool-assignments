@@ -4,7 +4,7 @@ import './styles/Anime.css'
 import homePageImg from './assets/home_page_img.jpg'
 
 function Anime() {
-
+    const [animewatchedListArr, setAnimeWatchedListArr] = useState([])
     const [animeList, setAnimeList] = useState([])
     const [search, setSearch] = useState("")
 

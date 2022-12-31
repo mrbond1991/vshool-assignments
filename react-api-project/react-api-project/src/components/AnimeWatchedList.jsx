@@ -1,5 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function AnimeWatchedList(props) {
-    const [editToggle, setEditToggle] = useState(false)
+
+    useEffect(() => {
+        props.getMangaWatchList()
+    })
 }
+

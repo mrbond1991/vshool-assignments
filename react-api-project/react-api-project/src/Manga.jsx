@@ -2,11 +2,52 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import './styles/Manga.css'
 import mangaImg from './assets/manga_pic_2.jpg'
+import MangaWatchedList from './components/MangaWatchedList.jsx'
 
 function Manga() {
-
+    const [mangaWatchList, setMangaWatchList] = useState([])
+    const [mangaWishList, setMangaWishList] = useState([])
     const [mangaList, setMangaList] = useState([])
     const [search, setSearch] = useState("")
+
+//Manga Watch List
+  //Get all
+  function getMangaWatchList() {
+    axios.get('/mangaWatchList')
+      .then(res => setMangaWatchList(res.data))
+      .catch(err => console.log(err))
+  }
+
+  //Post One
+  function addMangaWatchListItem(newMangaListItem) {
+    axios.post('/mangaWatchList')
+      .then(res => {
+        setMangaWatchList(prevMangaWatchList => [...prevMangaWatchList, res.data])
+      })
+      .catch(err => console.log(err))
+  }
+
+  //Delete One
+  function deleteWatchListItem(mangaWatchListID) {
+    axios.delete(`/mangaWatchList/${mangaWatchListID}`)
+      .then(res => {
+        setMangaWatchList(prevMangaWatchList => prevMangaWatchList.filter(item => item._id !== mangaWatchListID))
+      })
+      .catch(err => console.log(err))
+  }
+
+  //Edit One
+  function editWatchListItem(updates, mangaWatchListID) {
+    axios.put(`/mangaWatchList/${mangaWatchListID}`, updates)
+      .then(res => {
+        setMangaWatchList(prevMangaWatchList => prevMangaWatchList.map(item => item._id !== mangaWatchListID ? item : res.data))
+      })
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    getMangaWatchList()
+  }, [])
 
     function handleSearch(e) {
         e.preventDefault();
@@ -45,7 +86,20 @@ function Manga() {
                         <button>Search</button>
                     </form>
                 </div>
-                <img className='mangaPageImg' src={mangaImg}></img>
+                {/* <img className='mangaPageImg' src={mangaImg}></img> */}
+                <div className='mangaReadList'>
+                    <h1>Read List</h1>
+                    {mangaWatchList.map(item => 
+                    <MangaWatchedList 
+                        className='mangaWatchListItem'
+                        {...item}
+                        key={item.mal_id}
+                    />
+                    )}
+                </div>
+                <div className='mangaWishList'>
+                    <h1>Wish List</h1>
+                </div>
             </div>
             <div className='mangaList'>
                 {mangaList.map(manga => (
@@ -58,7 +112,14 @@ function Manga() {
                         <a 
                             href={manga.url}
                             target="_blank"
-                        ><img src={manga.images.jpg.image_url} alt="Manga Image"/></a>
+                        >
+                        <img src={manga.images.jpg.image_url} alt="Manga Image"/></a>
+                        <button
+                            
+                        >Add to Wish List</button>
+                        <button
+                            onClick={() => addMangaWatchListItem()}
+                        >Add to Read List</button>
                     </div>
                 ))}
             </div>

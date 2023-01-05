@@ -20,7 +20,7 @@ function Manga() {
 
   //Post One
   function addMangaWatchListItem(newMangaListItem) {
-    axios.post('/mangaWatchList')
+    axios.post('/mangaWatchList', newMangaListItem)
       .then(res => {
         setMangaWatchList(prevMangaWatchList => [...prevMangaWatchList, res.data])
       })
@@ -87,18 +87,20 @@ function Manga() {
                     </form>
                 </div>
                 {/* <img className='mangaPageImg' src={mangaImg}></img> */}
-                <div className='mangaReadList'>
-                    <h1>Read List</h1>
-                    {mangaWatchList.map(item => 
-                    <MangaWatchedList 
-                        className='mangaWatchListItem'
-                        {...item}
-                        key={item.mal_id}
-                    />
-                    )}
-                </div>
-                <div className='mangaWishList'>
-                    <h1>Wish List</h1>
+                <div className='mangaLists'>
+                    <div className='mangaReadList'>
+                        <h1>Read List</h1>
+                        {mangaWatchList.map(item => 
+                        <MangaWatchedList 
+                            className='mangaWatchListItem'
+                            {...item}
+                            key={item.mal_id}
+                        />
+                        )}
+                    </div>
+                    <div className='mangaWishList'>
+                        <h1>Wish List</h1>
+                    </div>
                 </div>
             </div>
             <div className='mangaList'>
@@ -118,7 +120,7 @@ function Manga() {
                             
                         >Add to Wish List</button>
                         <button
-                            onClick={() => addMangaWatchListItem()}
+                            onClick= {console.log(mangaWatchList)}
                         >Add to Read List</button>
                     </div>
                 ))}

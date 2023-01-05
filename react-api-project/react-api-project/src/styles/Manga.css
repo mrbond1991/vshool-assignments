@@ -1,15 +1,19 @@
 .mangaPage {
     display: flex;
-    /* height: 100%; */
-    /* background-image: url("/Users/michaelbond/vschool/assignments/react-api-project/react-api-project/src/assets/manga_pic_2.jpg"); */
-    /* background-repeat: no-repeat;
+    height: 35rem;
+    background-image: url("/Users/michaelbond/vschool/assignments/react-api-project/react-api-project/src/assets/manga_pic_2.jpg");
+    background-repeat: no-repeat;
     background-position: inherit;
-    margin-right: 200px;
-    background-attachment: fixed; */
+    background-size: 100%;
+    /* margin-right: 200px; */
+    background-attachment: fixed;
 }
 
 .mangaSearch {
-    background-color: #FFDE59;
+    background-color: rgb(255, 222, 89, .7);
+    border-radius: 5%;
+    border: 5px black solid;
+    margin: 25px;
     color: black;
     width: 50%;
     text-align: center;
@@ -33,6 +37,28 @@
     width: 30em;
     margin-bottom: 30px;
     /* border: 1px black solid; */
+}
+
+.mangaLists {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    background-color: rgb(255, 222, 89, .7);
+    border-radius: 5%;
+    border: 5px black solid;
+    margin: 25px;
+    justify-content: space-around;
+}
+
+.mangaLists > .mangaReadList > h1 {
+    font-size: 50px;
+    color: black;
+    text-shadow: -2px 4px #FF443A;
+}
+.mangaLists > .mangaWishList > h1 {
+    font-size: 50px;
+    color: black;
+    text-shadow: -2px 4px #FF443A;
 }
 
 .mangaForm {

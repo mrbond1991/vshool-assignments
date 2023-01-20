@@ -13,14 +13,14 @@ function Manga() {
 //Manga Watch List
   //Get all
   function getMangaWatchList() {
-    axios.get('/mangaWatchList')
+    axios.get('/api/mangaWatchList')
       .then(res => setMangaWatchList(res.data))
       .catch(err => console.log(err))
   }
 
   //Post One
   function addMangaWatchListItem(newMangaListItem) {
-    axios.post('/mangaWatchList', newMangaListItem)
+    axios.post('/api/mangaWatchList', {title: newMangaListItem})
       .then(res => {
         setMangaWatchList(prevMangaWatchList => [...prevMangaWatchList, res.data])
       })
@@ -29,7 +29,7 @@ function Manga() {
 
   //Delete One
   function deleteWatchListItem(mangaWatchListID) {
-    axios.delete(`/mangaWatchList/${mangaWatchListID}`)
+    axios.delete(`/api/mangaWatchList/${mangaWatchListID}`)
       .then(res => {
         setMangaWatchList(prevMangaWatchList => prevMangaWatchList.filter(item => item._id !== mangaWatchListID))
       })
@@ -38,7 +38,7 @@ function Manga() {
 
   //Edit One
   function editWatchListItem(updates, mangaWatchListID) {
-    axios.put(`/mangaWatchList/${mangaWatchListID}`, updates)
+    axios.put(`/api/mangaWatchList/${mangaWatchListID}`, updates)
       .then(res => {
         setMangaWatchList(prevMangaWatchList => prevMangaWatchList.map(item => item._id !== mangaWatchListID ? item : res.data))
       })
@@ -116,11 +116,11 @@ function Manga() {
                             target="_blank"
                         >
                         <img src={manga.images.jpg.image_url} alt="Manga Image"/></a>
-                        <button
+                        <button 
                             
                         >Add to Wish List</button>
                         <button
-                            onClick= {console.log(mangaWatchList)}
+                            onClick={() => addMangaWatchListItem(manga.title)}
                         >Add to Read List</button>
                     </div>
                 ))}

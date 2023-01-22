@@ -41,6 +41,7 @@
 
 .mangaLists {
     display: flex;
+    overflow-x: auto;
     width: 50%;
     flex-direction: row;
     background-color: rgb(255, 222, 89, .7);
@@ -50,13 +51,39 @@
     justify-content: space-around;
 }
 
+.mangaReadList {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin: 15px;
+    width: 50%;
+}
+
 .mangaLists > .mangaReadList > h1 {
     font-size: 50px;
-    color: black;
+    text-decoration: underline;
+    margin-bottom: -5px;
     text-shadow: -2px 4px #FF443A;
 }
+
+.mangaWishList {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin: 15px;
+    width: 50%;
+}
+
 .mangaLists > .mangaWishList > h1 {
     font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: -5px;
     color: black;
     text-shadow: -2px 4px #FF443A;
 }

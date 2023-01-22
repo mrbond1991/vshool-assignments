@@ -11,10 +11,10 @@ mongoose.connect(
     () => console.log('Connected to Otaku Search Database')
 )
 
-app.use("/animeWishList", require("./routes/animeWLRouter.js"))
-app.use("/mangaWishList", require("./routes/mangaWLRouter.js"))
-app.use("/animeWatchList", require("./routes/animeWatchedRouter.js"))
-app.use("/mangaWatchList", require("./routes/mangaWatchedRouter.js"))
+app.use("/api/animeWishList", require("./routes/animeWLRouter.js"))
+app.use("/api/mangaWishList", require("./routes/mangaWLRouter.js"))
+app.use("/api/animeWatchList", require("./routes/animeWatchedRouter.js"))
+app.use("/api/mangaWatchList", require("./routes/mangaWatchedRouter.js"))
 
 app.use((err, req, res, next) => {
     console.log(err)

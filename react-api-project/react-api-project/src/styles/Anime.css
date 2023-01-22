@@ -1,9 +1,19 @@
 .animePage {
     display: flex;
+    height: 35rem;
+    background-image: url("/Users/michaelbond/vschool/assignments/react-api-project/react-api-project/src/assets/manga_pic_2.jpg");
+    background-repeat: no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+    /* margin-right: 200px; */
+    background-attachment: fixed;
 }
 
 .animeSearch {
-    background-color: #FFDE59;
+    background-color: rgb(255, 222, 89, .7);
+    border-radius: 5%;
+    border: 5px black solid;
+    margin: 25px;
     color: black;
     width: 50%;
     text-align: center;
@@ -27,6 +37,64 @@
     width: 30em;
     margin-bottom: 30px;
     /* border: 1px black solid; */
+}
+
+.animeLists {
+    display: flex;
+    overflow-x: auto;
+    width: 50%;
+    flex-direction: row;
+    background-color: rgb(255, 222, 89, .7);
+    border-radius: 5%;
+    border: 5px black solid;
+    margin: 25px;
+    justify-content: space-around;
+}
+
+.animeReadList {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin: 15px;
+    width: 50%;
+}
+
+.animeLists > .animeReadList > h1 {
+    font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: -5px;
+    text-shadow: -2px 4px #FF443A;
+}
+
+.animeWishList {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin: 15px;
+    width: 50%;
+}
+
+.animeLists > .animeWishList > h1 {
+    font-size: 50px;
+    text-decoration: underline;
+    margin-bottom: -5px;
+    color: black;
+    text-shadow: -2px 4px #FF443A;
+}
+
+.animeListDiv > button {
+    background-color: #FF443A;
+    border-radius: 20px;
+    margin: 5px 0;
+    width: 8em;
+    font-size: 20px;
+    color: black;
 }
 
 .animeForm {

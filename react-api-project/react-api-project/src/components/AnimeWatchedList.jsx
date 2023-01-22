@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function AnimeWatchedList(props) {
+    const { title, _id } = props
 
-    useEffect(() => {
-        props.getMangaWatchList()
-    })
+    return (
+        <div>
+            <h3>{title}</h3>
+            <button
+                onClick={() => props.deleteWatchListItem(_id)}
+            >Remove</button>
+        </div>
+    )
 }
-
